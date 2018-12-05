@@ -759,47 +759,47 @@ func NewPrometheusCollector(i infoProvider, f ContainerLabelsFunc, includedMetri
 				getValues: func(s *info.ContainerStats) metricValues {
 					return metricValues{
 						{
-							value:  float64(s.Network.Tcp.Established),
+							value:  float64(s.Network.Tcp.Established)+float64(s.Network.Tcp6.Established),
 							labels: []string{"established"},
 						},
 						{
-							value:  float64(s.Network.Tcp.SynSent),
+							value:  float64(s.Network.Tcp.SynSent)+float64(s.Network.Tcp6.SynSent),
 							labels: []string{"synsent"},
 						},
 						{
-							value:  float64(s.Network.Tcp.SynRecv),
+							value:  float64(s.Network.Tcp.SynRecv)+float64(s.Network.Tcp6.SynRecv),
 							labels: []string{"synrecv"},
 						},
 						{
-							value:  float64(s.Network.Tcp.FinWait1),
+							value:  float64(s.Network.Tcp.FinWait1)+float64(s.Network.Tcp6.FinWait1),
 							labels: []string{"finwait1"},
 						},
 						{
-							value:  float64(s.Network.Tcp.FinWait2),
+							value:  float64(s.Network.Tcp.FinWait2)+float64(s.Network.Tcp.FinWait2),
 							labels: []string{"finwait2"},
 						},
 						{
-							value:  float64(s.Network.Tcp.TimeWait),
+							value:  float64(s.Network.Tcp.TimeWait)+ float64(s.Network.Tcp6.TimeWait),
 							labels: []string{"timewait"},
 						},
 						{
-							value:  float64(s.Network.Tcp.Close),
+							value:  float64(s.Network.Tcp.Close)+,
 							labels: []string{"close"},
 						},
 						{
-							value:  float64(s.Network.Tcp.CloseWait),
+							value:  float64(s.Network.Tcp.CloseWait)+,
 							labels: []string{"closewait"},
 						},
 						{
-							value:  float64(s.Network.Tcp.LastAck),
+							value:  float64(s.Network.Tcp.LastAck)+,
 							labels: []string{"lastack"},
 						},
 						{
-							value:  float64(s.Network.Tcp.Listen),
+							value:  float64(s.Network.Tcp.Listen)+,
 							labels: []string{"listen"},
 						},
 						{
-							value:  float64(s.Network.Tcp.Closing),
+							value:  float64(s.Network.Tcp.Closing)+,
 							labels: []string{"closing"},
 						},
 					}
